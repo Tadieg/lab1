@@ -1,25 +1,37 @@
 
 #include<stdio.h>
+void fibonaciByValue(int n);
+void fibonaciByReference(int*n);
 int main(){
-    int l,i;
-    printf("Enter the length of the fibonacci \n");
-    scanf("%d",&l);
-    int fib[l];
-    for(i=0;i<=l;i++){
-     if(i<2){
-     fib[i]=i;
- }else{
-        fib[i]=fib[i-1]+fib[i-2];
+	int n;
+	printf("enter the number n  ");
+	scanf("%d",&n);
+	printf("===============fibonaci by value:==================\n");
+  fibonaciByValue(n);
+  fibonaciByReference(&n);
 }
-    }
-    displayFibonanci2(&fib,l);
+ void fibonaciByValue(int n){
+ 	int i;
+ 	int arr[n];
+ 	arr[0]=0,arr[1]=1;
+	for(i=2;i<n;i++){
+	arr[i]=arr[i-1]+arr[i-2];
+	}
+	for(i=0;i<n;i++){
+		printf("%d\n",arr[i]);
+	}
 
-    }
-
-    void displayFibonanci2(int *fib[],int l){
-    	int j;
-      for( j=0;j<=l ;j++){
-          printf("%d \t",*(fib+j));
-    }
-
-    }
+}
+ void fibonaciByReference(int*n){
+ 	int i;
+ 	int arr[*n];
+ 	arr[0]=0,arr[1]=1;
+	for(i=2;i<*n;i++){
+	arr[i]=arr[i-1]+arr[i-2];
+	}
+	printf("*==========fibonaci by reference===============*\n");
+	for(i=0;i<*n;i++){
+		printf("%d\n",arr[i]);
+	}
+	
+}

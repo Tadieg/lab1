@@ -1,12 +1,10 @@
 
 #include<stdio.h>
-void fibonaciByValue(int n);
 void fibonaciByReference(int*n);
 int main(){
 	int n;
 	printf("enter the number n  ");
 	scanf("%d",&n);
-	printf("===============fibonaci by value:==================\n");
         fibonaciByReference(&n);
 }
 
@@ -21,5 +19,4 @@ int main(){
 	for(i=0;i<*n;i++){
 		printf("%d\n",arr[i]);
 	}
-	
 }

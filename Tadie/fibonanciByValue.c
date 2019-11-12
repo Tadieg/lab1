@@ -1,6 +1,5 @@
 #include<stdio.h>
 void fibonaciByValue(int n);
-void fibonaciByReference(int*n);
 int main(){
 	int n;
 	printf("enter the number n  ");
